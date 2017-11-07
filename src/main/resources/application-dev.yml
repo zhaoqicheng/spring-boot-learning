@@ -1,0 +1,68 @@
+server:
+      port : 80
+      context-path : /api
+
+spring:
+      mvc:
+        view:
+          prefix: /
+          suffix: .html
+      datasource :
+        driver-class-name : com.mysql.jdbc.Driver
+        url : jdbc:mysql://127.0.0.1:3306/dcmaindbpro?useUnicode=true&characterEncoding=utf-8
+        username : root
+        password : root
+        type: com.alibaba.druid.pool.DruidDataSource
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        # 配置获取连接等待超时的时间
+        maxWait: 60000
+        minIdle: 1
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+        timeBetweenEvictionRunsMillis: 60000
+          # 配置一个连接在池中最小生存的时间，单位是毫秒
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        # 打开PSCache，并且指定每个连接上PSCache的大小
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+      http:
+        encoding:
+          charset: UTF-8
+          enabled: true
+          force: true
+
+#mybatis相关配置
+mybatis:
+      typeAliasesPackage: com.example.learning.db.model
+      mapperLocations: classpath:/mapper/*.xml
+      configLocation: classpath:/mybatis/mybatis-config.xml
+
+#自定义mapper位置
+mapper:
+      mappers:
+          - cn.niuluotech.utils.MyMapper
+      not-empty: false
+      identity: MYSQL
+
+#分页插件
+pagehelper:
+      helperDialect: mysql
+      reasonable: true
+      supportMethodsArguments: true
+      params: count=countSql
+
+#日志文件
+logging:
+      configLocation: classpath:/logback-spring.xml
+
+#自定义的本机客户端参数   过期时间一个月
+audience:
+      clientID : 098f6bcd4621d373cade4e832627b4f6
+      name : niuluo-tench/restApi
+      base64Secret : MDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjY=
+      expiresSecond : 2592000
