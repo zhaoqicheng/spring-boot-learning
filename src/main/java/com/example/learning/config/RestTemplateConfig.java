@@ -16,7 +16,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created by zhaoqicheng on 2017/5/26.
+ * Created by zhaoqicheng on 2017/11/8.
  *
  * RestTemplate springboot官方推荐的发送http请求
  *
