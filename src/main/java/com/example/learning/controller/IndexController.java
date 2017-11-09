@@ -80,4 +80,6 @@ public class IndexController {
         ResponseEntity<String> results = restTemplate.exchange(DIC_DATA_URL, HttpMethod.GET, null, String.class, DSTU4145NamedCurves.params);
         return null;
     }
+
+
 }

@@ -25,6 +25,7 @@ public abstract class RedisBaseService<T> implements IRedisBaseService<T> {
      *
      * @return
      */
+    @Override
     public abstract String getRedisKey();
 
     /**
@@ -34,6 +35,7 @@ public abstract class RedisBaseService<T> implements IRedisBaseService<T> {
      * @param doamin 对象
      * @param expire 过期时间(单位:秒),传入 -1 时表示不设置过期时间
      */
+    @Override
     public void put(String key, T doamin, long expire) {
         hashOperations.put(getRedisKey(), key, doamin);
         if (expire != -1) {
@@ -56,6 +58,7 @@ public abstract class RedisBaseService<T> implements IRedisBaseService<T> {
      *
      * @param key 传入key的名称
      */
+    @Override
     public void remove(String key) {
         hashOperations.delete(getRedisKey(), key);
     }
@@ -66,6 +69,7 @@ public abstract class RedisBaseService<T> implements IRedisBaseService<T> {
      * @param key 查询的key
      * @return
      */
+    @Override
     public T get(String key) throws Exception{
         return hashOperations.get(getRedisKey(), key);
     }
@@ -75,6 +79,7 @@ public abstract class RedisBaseService<T> implements IRedisBaseService<T> {
      *
      * @return
      */
+    @Override
     public List<T> getAll() {
         return (List<T>) hashOperations.values(getRedisKey());
     }
@@ -84,6 +89,7 @@ public abstract class RedisBaseService<T> implements IRedisBaseService<T> {
      *
      * @return
      */
+    @Override
     public Set<String> getKeys() {
         return hashOperations.keys(getRedisKey());
     }
@@ -94,6 +100,7 @@ public abstract class RedisBaseService<T> implements IRedisBaseService<T> {
      * @param key 传入key的名称
      * @return
      */
+    @Override
     public boolean isKeyExists(String key) {
         return hashOperations.hasKey(getRedisKey(), key);
     }
@@ -103,6 +110,7 @@ public abstract class RedisBaseService<T> implements IRedisBaseService<T> {
      *
      * @return
      */
+    @Override
     public long count() {
         return hashOperations.size(getRedisKey());
     }
@@ -110,6 +118,7 @@ public abstract class RedisBaseService<T> implements IRedisBaseService<T> {
     /**
      * 清空redis
      */
+    @Override
     public void empty() {
         Set<String> set = hashOperations.keys(getRedisKey());
         set.stream().forEach(key -> hashOperations.delete(getRedisKey(), key));

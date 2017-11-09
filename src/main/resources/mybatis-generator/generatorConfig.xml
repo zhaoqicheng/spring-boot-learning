@@ -15,13 +15,13 @@
         </plugin>
 
         <!-- 自动识别数据库关键字，默认false，如果设置为true，根据SqlReservedWords中定义的关键字列表一般保留默认值，遇到数据库关键字（Java关键字），使用columnOverride覆盖  -->
-        <property name="autoDelimitKeywords" value="false"/>
-        <!-- 生成的Java文件的编码 -->
-        <property name="javaFileEncoding" value="UTF-8"/>
-        <!-- 格式化java代码 -->
-        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
-        <!-- 格式化XML代码 -->
-        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+        <!--<property name="autoDelimitKeywords" value="false"/>-->
+        <!--&lt;!&ndash; 生成的Java文件的编码 &ndash;&gt;-->
+        <!--<property name="javaFileEncoding" value="UTF-8"/>-->
+        <!--&lt;!&ndash; 格式化java代码 &ndash;&gt;-->
+        <!--<property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>-->
+        <!--&lt;!&ndash; 格式化XML代码 &ndash;&gt;-->
+        <!--<property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>-->
 
         <!-- 生成的pojo，将implements Serializable-->
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
