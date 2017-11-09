@@ -6,13 +6,22 @@
 
     <context id="mysqlTables" targetRuntime="MyBatis3">
 
-        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
 
         <!-- 使用criteria代替Examples自动生成结尾 如这里会在dao下生成MyInfoCriteria 否则默认的为MyInfoExample-->
         <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
-            <property name="searchString" value="Example$" />
-            <property name="replaceString" value="Criteria" />
+            <property name="searchString" value="Example$"/>
+            <property name="replaceString" value="Criteria"/>
         </plugin>
+
+        <!-- 自动识别数据库关键字，默认false，如果设置为true，根据SqlReservedWords中定义的关键字列表一般保留默认值，遇到数据库关键字（Java关键字），使用columnOverride覆盖  -->
+        <property name="autoDelimitKeywords" value="false"/>
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- 格式化java代码 -->
+        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+        <!-- 格式化XML代码 -->
+        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
 
         <!-- 生成的pojo，将implements Serializable-->
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
@@ -24,13 +33,6 @@
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/learning"
                         userId="root" password="root"/>
-
-        <!--<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />-->
-        <!-- 使用criteria代替Examples自动生成结尾 如这里会在dao下生成MyInfoCriteria 否则默认的为MyInfoExample-->
-        <!--<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">-->
-        <!--<property name="searchString" value="Example$" />-->
-        <!--<property name="replaceString" value="Criteria" />-->
-        <!--</plugin>-->
 
         <!--指定生成的类型为java类型，避免数据库中number等类型字段 -->
         <javaTypeResolver>
@@ -50,7 +52,6 @@
         <sqlMapGenerator targetPackage="resources.mapper"
                          targetProject="src/main/">
             <property name="enableSubPackages" value="true"/>
-
         </sqlMapGenerator>
 
         <!--自动生成的*Mapper.java存放路径 -->
@@ -74,5 +75,4 @@
             <!--<columnOverride column="sex" jdbcType="VARCHAR" />-->
         </table>
     </context>
-
 </generatorConfiguration>

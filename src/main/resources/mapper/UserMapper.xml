@@ -379,4 +379,130 @@
       head_img = #{headImg,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <resultMap id="BaseResultMap" type="com.example.learning.db.model.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="adress" jdbcType="VARCHAR" property="adress" />
+    <result column="height" jdbcType="DOUBLE" property="height" />
+    <result column="weight" jdbcType="DOUBLE" property="weight" />
+    <result column="head_img" jdbcType="VARCHAR" property="headImg" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_name, telephone, gender, adress, height, weight, head_img
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.learning.db.model.User">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
+      selectuuid_short()
+    </selectKey>
+    insert into user (id, user_name, telephone, 
+      gender, adress, height, 
+      weight, head_img)
+    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, 
+      #{gender,jdbcType=VARCHAR}, #{adress,jdbcType=VARCHAR}, #{height,jdbcType=DOUBLE}, 
+      #{weight,jdbcType=DOUBLE}, #{headImg,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.learning.db.model.User">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
+      selectuuid_short()
+    </selectKey>
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      id,
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="telephone != null">
+        telephone,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="adress != null">
+        adress,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="headImg != null">
+        head_img,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      #{id,jdbcType=INTEGER},
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="adress != null">
+        #{adress,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=DOUBLE},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=DOUBLE},
+      </if>
+      <if test="headImg != null">
+        #{headImg,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.learning.db.model.User">
+    update user
+    <set>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        telephone = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="adress != null">
+        adress = #{adress,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null">
+        height = #{height,jdbcType=DOUBLE},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=DOUBLE},
+      </if>
+      <if test="headImg != null">
+        head_img = #{headImg,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.learning.db.model.User">
+    update user
+    set user_name = #{userName,jdbcType=VARCHAR},
+      telephone = #{telephone,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      adress = #{adress,jdbcType=VARCHAR},
+      height = #{height,jdbcType=DOUBLE},
+      weight = #{weight,jdbcType=DOUBLE},
+      head_img = #{headImg,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
 </mapper>
