@@ -26,4 +26,5 @@ public class ScheduledTasks {
     public void reportCurrentTime() {
         System.out.println("现在时间：" + dateFormat.format(new Date()));
     }
+
 }
