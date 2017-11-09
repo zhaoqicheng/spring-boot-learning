@@ -7,7 +7,14 @@ spring:
         view:
           prefix: /
           suffix: .html
-      datasource :
+
+      http:
+        encoding:
+          charset: UTF-8
+          enabled: true
+          force: true
+
+      datasource:
         driver-class-name : com.mysql.jdbc.Driver
         url : jdbc:mysql://127.0.0.1:3306/learning?useUnicode=true&characterEncoding=utf-8
         username : root
@@ -21,7 +28,7 @@ spring:
         minIdle: 1
         # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
         timeBetweenEvictionRunsMillis: 60000
-          # 配置一个连接在池中最小生存的时间，单位是毫秒
+        # 配置一个连接在池中最小生存的时间，单位是毫秒
         minEvictableIdleTimeMillis: 300000
         validationQuery: select 'x'
         testWhileIdle: true
@@ -30,11 +37,26 @@ spring:
         # 打开PSCache，并且指定每个连接上PSCache的大小
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
-      http:
-        encoding:
-          charset: UTF-8
-          enabled: true
-          force: true
+
+      # REDIS (RedisProperties)
+      redis:
+        # Redis数据库索引（默认为0）
+        database: 0
+        # Redis服务器地址
+        host: localhost
+        port: 6379
+        password:
+        pool:
+          # 连接池最大连接数（使用负值表示没有限制）
+          max-active: 8
+          # 连接池最大阻塞等待时间（使用负值表示没有限制）
+          max-wait: 1
+          # 连接池中的最大空闲连接
+          max-idle: 8
+          # 连接池中的最小空闲连接
+          min-idle: 0
+        # 连接超时时间（毫秒）
+        timeout: 0
 
 #mybatis相关配置
 mybatis:
