@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <!--<properties resource="schemeone/properties/mysql/mysql.properties"/>-->
+
+    <context id="mysqlTables" targetRuntime="MyBatis3">
+
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+
+        <!-- 使用criteria代替Examples自动生成结尾 如这里会在dao下生成MyInfoCriteria 否则默认的为MyInfoExample-->
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$" />
+            <property name="replaceString" value="Criteria" />
+        </plugin>
+
+        <!-- 生成的pojo，将implements Serializable-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+
+        <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/learning"
+                        userId="root" password="root"/>
+
+        <!--<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />-->
+        <!-- 使用criteria代替Examples自动生成结尾 如这里会在dao下生成MyInfoCriteria 否则默认的为MyInfoExample-->
+        <!--<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">-->
+        <!--<property name="searchString" value="Example$" />-->
+        <!--<property name="replaceString" value="Criteria" />-->
+        <!--</plugin>-->
+
+        <!--指定生成的类型为java类型，避免数据库中number等类型字段 -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!--自动生成的实体的存放包路径 -->
+        <javaModelGenerator targetPackage="com.example.learning.db.model"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <!-- 表示自动生成类之后自动继承CoreEntity -->
+            <!--<property name="rootClass" value="com.biu.wifi.core.base.CoreEntity" />-->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--自动生成的*Mapper.xml文件存放路径 -->
+        <sqlMapGenerator targetPackage="resources.mapper"
+                         targetProject="src/main/">
+            <property name="enableSubPackages" value="true"/>
+
+        </sqlMapGenerator>
+
+        <!--自动生成的*Mapper.java存放路径 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.example.learning.db.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <!--&lt;!&ndash; 表示自动生成类之后自动实现接口CoreDao &ndash;&gt;-->
+            <!--<property name="rootInterface" value="com.biu.wifi.core.base.CoreDao" />-->
+        </javaClientGenerator>
+
+        <!--指定表名称和实体类名称-->
+        <table tableName="user" domainObjectName="User"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="ID" sqlStatement="selectuuid_short()" identity="false"/>
+
+            <!--&lt;!&ndash; 忽略列，不生成bean 字段 &ndash;&gt;-->
+            <!--<ignoreColumn column="name" />-->
+            <!--&lt;!&ndash; 指定列的java数据类型 &ndash;&gt;-->
+            <!--<columnOverride column="sex" jdbcType="VARCHAR" />-->
+        </table>
+    </context>
+
+</generatorConfiguration>
