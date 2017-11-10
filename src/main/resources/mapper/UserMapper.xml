@@ -10,9 +10,10 @@
     <result column="height" jdbcType="DOUBLE" property="height" />
     <result column="weight" jdbcType="DOUBLE" property="weight" />
     <result column="head_img" jdbcType="VARCHAR" property="headImg" />
+    <result column="pass_word" jdbcType="VARCHAR" property="passWord" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, user_name, telephone, gender, adress, height, weight, head_img
+    id, user_name, telephone, gender, adress, height, weight, head_img, pass_word
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -30,10 +31,12 @@
     </selectKey>
     insert into user (id, user_name, telephone, 
       gender, adress, height, 
-      weight, head_img)
+      weight, head_img, pass_word
+      )
     values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, 
       #{gender,jdbcType=VARCHAR}, #{adress,jdbcType=VARCHAR}, #{height,jdbcType=DOUBLE}, 
-      #{weight,jdbcType=DOUBLE}, #{headImg,jdbcType=VARCHAR})
+      #{weight,jdbcType=DOUBLE}, #{headImg,jdbcType=VARCHAR}, #{passWord,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.example.learning.db.model.User">
     <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
@@ -63,6 +66,9 @@
       <if test="headImg != null">
         head_img,
       </if>
+      <if test="passWord != null">
+        pass_word,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       #{id,jdbcType=INTEGER},
@@ -86,6 +92,9 @@
       </if>
       <if test="headImg != null">
         #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="passWord != null">
+        #{passWord,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -113,6 +122,9 @@
       <if test="headImg != null">
         head_img = #{headImg,jdbcType=VARCHAR},
       </if>
+      <if test="passWord != null">
+        pass_word = #{passWord,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -124,7 +136,8 @@
       adress = #{adress,jdbcType=VARCHAR},
       height = #{height,jdbcType=DOUBLE},
       weight = #{weight,jdbcType=DOUBLE},
-      head_img = #{headImg,jdbcType=VARCHAR}
+      head_img = #{headImg,jdbcType=VARCHAR},
+      pass_word = #{passWord,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

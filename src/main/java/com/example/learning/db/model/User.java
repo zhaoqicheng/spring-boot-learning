@@ -19,6 +19,8 @@ public class User implements Serializable {
 
     private String headImg;
 
+    private String passWord;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -85,6 +87,14 @@ public class User implements Serializable {
         this.headImg = headImg == null ? null : headImg.trim();
     }
 
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord == null ? null : passWord.trim();
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -104,7 +114,8 @@ public class User implements Serializable {
             && (this.getAdress() == null ? other.getAdress() == null : this.getAdress().equals(other.getAdress()))
             && (this.getHeight() == null ? other.getHeight() == null : this.getHeight().equals(other.getHeight()))
             && (this.getWeight() == null ? other.getWeight() == null : this.getWeight().equals(other.getWeight()))
-            && (this.getHeadImg() == null ? other.getHeadImg() == null : this.getHeadImg().equals(other.getHeadImg()));
+            && (this.getHeadImg() == null ? other.getHeadImg() == null : this.getHeadImg().equals(other.getHeadImg()))
+            && (this.getPassWord() == null ? other.getPassWord() == null : this.getPassWord().equals(other.getPassWord()));
     }
 
     @Override
@@ -119,6 +130,7 @@ public class User implements Serializable {
         result = prime * result + ((getHeight() == null) ? 0 : getHeight().hashCode());
         result = prime * result + ((getWeight() == null) ? 0 : getWeight().hashCode());
         result = prime * result + ((getHeadImg() == null) ? 0 : getHeadImg().hashCode());
+        result = prime * result + ((getPassWord() == null) ? 0 : getPassWord().hashCode());
         return result;
     }
 }
