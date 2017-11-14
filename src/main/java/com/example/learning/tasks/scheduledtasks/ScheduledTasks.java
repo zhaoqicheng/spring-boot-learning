@@ -1,4 +1,4 @@
-package com.example.learning.scheduledtasks;
+package com.example.learning.tasks.scheduledtasks;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
