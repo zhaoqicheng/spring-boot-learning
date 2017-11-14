@@ -66,6 +66,18 @@ spring:
         # 连接超时时间（毫秒）
         timeout: 0
 
+      mail:
+        host: smtp.exmail.qq.com
+        username: 643198195@qq.com
+        password: zqc970319.
+        smtp:
+           auth: true
+           port: 465
+           starttls:
+            enable: true
+            required: true
+            password: mzzoustzsflfbecj
+
 #mybatis相关配置
 mybatis:
       typeAliasesPackage: com.example.learning.db.model

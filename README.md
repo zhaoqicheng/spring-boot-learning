@@ -49,6 +49,7 @@ https://www.bysocket.com/?p=1712
 
 第三部分：
 使用JWT规范，处理用户登录信息，并按照JWT规范给用户颁发证书token（jwt）。
+Spring Boot中使用Spring Security进行安全控制
 
 第四部分：
 整合redis。

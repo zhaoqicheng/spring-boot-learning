@@ -212,6 +212,17 @@
             <artifactId>spring-boot-test</artifactId>
         </dependency>
 
+        <!--java邮件发送-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        <!--邮件模板-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-velocity</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
