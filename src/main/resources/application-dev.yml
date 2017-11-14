@@ -67,16 +67,18 @@ spring:
         timeout: 0
 
       mail:
-        host: smtp.exmail.qq.com
+        host: smtp.qq.com
+        #替换成发送邮件使用邮件地址
         username: 643198195@qq.com
-        password: zqc970319.
-        smtp:
-           auth: true
-           port: 465
-           starttls:
-            enable: true
-            required: true
-            password: mzzoustzsflfbecj
+        password: snqrbinvstqkbcci
+        properties:
+          mail:
+            smtp:
+             auth: true
+             starttls:
+              enable: true
+              required: true
+              #password: mzzoustzsflfbecj
 
 #mybatis相关配置
 mybatis:
