@@ -65,6 +65,13 @@ Spring Boot中使用@Async实现异步调用。
 
 第七部分：
 使用Spring Security
+我们在编写Web应用时，经常需要对页面做一些安全控制，比如：对于没有访问权限的用户需要转到登录表单页面。
+要实现访问控制的方法多种多样，可以通过Aop、拦截器实现，也可以通过框架实现（如：Apache Shiro、Spring Security）。
+https://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsingle/
+
+个人看法：
+    本人没有使用Spring Security的经验，权限一般都采用自定义的filter完成，但是对于现在互联网架构前后端分离来看，
+后端对安全控制，更多不在于页面资源，或者页面资源只是其中的一部分，更重要的是对接口资源安全控制，针对这一块，采用filter和JWT规范感觉是目前比较好的解决方式。
 
 第八部分：
 实现邮件发送：简单邮件、附件邮件、嵌入资源的邮件、模板邮件（完成）。

@@ -48,6 +48,16 @@ public class IndexController {
         return "index";
     }
 
+    @RequestMapping("/hello")
+    public String hello() {
+        return "hello";
+    }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+
     @RequestMapping("/httpGet")
     public String httpGet() {
         ResponseEntity<Map> resp = restTemplate.exchange(DIC_DATA_URL + "?id={id}", HttpMethod.DELETE, null, Map.class, 227);
@@ -80,6 +90,5 @@ public class IndexController {
         ResponseEntity<String> results = restTemplate.exchange(DIC_DATA_URL, HttpMethod.GET, null, String.class, DSTU4145NamedCurves.params);
         return null;
     }
-
 
 }
