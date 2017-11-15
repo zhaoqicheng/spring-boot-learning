@@ -53,20 +53,23 @@ Spring Boot中使用Spring Security进行安全控制
 
 第四部分：
 整合redis。
-
-第四部分：
-Spring Boot中使用@Async实现异步调用。
+redis 的分片式储存原理，分布式储存原理（未实现）。
+知乎之分布式锁：
+https://www.zhihu.com/question/21419897
 
 第五部分：
-使用AOP统一处理Web请求日志
+Spring Boot中使用@Async实现异步调用。
 
 第六部分：
-使用Spring Security
+使用AOP统一处理Web请求日志
 
 第七部分：
-实现邮件发送：简单邮件、附件邮件、嵌入资源的邮件、模板邮件
+使用Spring Security
 
 第八部分：
+实现邮件发送：简单邮件、附件邮件、嵌入资源的邮件、模板邮件（完成）。
+
+第九部分：
 Spring Boot中使用Dubbo进行服务治理
 Spring Boot与Dubbo中管理服务依赖
 

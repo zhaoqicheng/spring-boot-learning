@@ -2,6 +2,11 @@ package com.example.learning.config;
 
 /**
  * Created by zhaoqicheng on 2017/7/11.
+ *
+ * 参照：
+ *      http://blog.csdn.net/linxingliang/article/details/52263763
+ *      https://www.cnblogs.com/skyessay/p/6485187.html
+ *      https://timyang.net/data/redis-misunderstanding/
  */
 
 import org.springframework.beans.factory.annotation.Autowired;

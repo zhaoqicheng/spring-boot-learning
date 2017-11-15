@@ -35,13 +35,6 @@ public class SpringBootLearningApplicationTests {
     @Autowired
     private JavaMailSender mailSender;
 
-    /**
-     * 未解决无法注入的问题
-     *
-     * @throws Exception
-     */
-//	@Autowired
-//	private VelocityEngine velocityEngine;
     @Test
     public void test() throws Exception {
         task.doTaskOne();
@@ -126,7 +119,7 @@ public class SpringBootLearningApplicationTests {
     /**
      * 创建模板邮件
      * 在resources 下 创建templates 下面创建 template.vm 文件
-     *
+     * <p>
      * 关于模板邮件，SpringBoot 原本是支持 velocity，在 1.4 版本后又抛弃了 velocity，暂时只支持 freemaker。
      *
      * @throws Exception
