@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.learning.db.model.User;
+import com.example.learning.service.TestServiceImpl;
 import com.example.learning.tasks.asynctasks.Task;
 import freemarker.template.Template;
 import org.junit.Test;
@@ -142,5 +144,22 @@ public class SpringBootLearningApplicationTests {
         helper.setText(html, true);
         mailSender.send(message);
     }
+
+    @Autowired
+    private TestServiceImpl redisService;
+
+    @Test
+    public void testPutRedis() throws Exception {
+        User user = new User();
+        user.setUserName("zhaoqicheng");
+        this.redisService.put(redisService.getRedisKey(),user);
+    }
+
+    @Test
+    public void testGetRedis() throws Exception {
+        Object o = this.redisService.get(redisService.getRedisKey());
+    }
+
+
 
 }

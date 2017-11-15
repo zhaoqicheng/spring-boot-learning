@@ -80,6 +80,9 @@ https://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsin
 Spring Boot中使用Dubbo进行服务治理
 Spring Boot与Dubbo中管理服务依赖
 
+系列博文参考地址：
+http://www.spring4all.com/
+
 
 
 
