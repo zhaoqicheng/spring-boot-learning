@@ -196,13 +196,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
-        <!--邮件模板-->
+        <!--邮件模板  采用freemarker-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-velocity</artifactId>
-            <version>1.4.7.RELEASE</version>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+            <version>1.1.8.RELEASE</version>
         </dependency>
-
     </dependencies>
 
     <build>
