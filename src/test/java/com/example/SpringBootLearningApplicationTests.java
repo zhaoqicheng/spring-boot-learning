@@ -30,6 +30,13 @@ public class SpringBootLearningApplicationTests {
 	@Autowired
 	private JavaMailSender mailSender;
 
+	/**
+	 * 未解决无法注入的问题
+	 * @throws Exception
+	 */
+//	@Autowired
+//	private VelocityEngine velocityEngine;
+
 	@Test
 	public void test() throws Exception {
 		task.doTaskOne();
