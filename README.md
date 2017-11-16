@@ -69,6 +69,12 @@ Spring Boot中使用@Async实现异步调用。
 要实现访问控制的方法多种多样，可以通过Aop、拦截器实现，也可以通过框架实现（如：Apache Shiro、Spring Security）。
 https://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsingle/
 
+其他：
+本项目解决跨域使用springboot的注解方式，以下有更多更有选择性的方式实现跨域：
+http://www.spring4all.com/article/177
+nginx实现跨域：
+https://www.cnblogs.com/gabrielchen/p/5066120.html
+
 个人看法：
     本人没有使用Spring Security的经验，权限一般都采用自定义的filter完成，但是对于现在互联网架构前后端分离来看，
 后端对安全控制，更多不在于页面资源，或者页面资源只是其中的一部分，更重要的是对接口资源安全控制，针对这一块，采用filter和JWT规范感觉是目前比较好的解决方式。
@@ -76,12 +82,17 @@ https://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsin
 第八部分：
 实现邮件发送：简单邮件、附件邮件、嵌入资源的邮件、模板邮件（完成）。
 
-第九部分：
+第九部分（暂未完成）：
 Spring Boot中使用Dubbo进行服务治理
 Spring Boot与Dubbo中管理服务依赖
 
+第十部分（暂未完成）：
+Spring Boot中使用RabbitMQ
+
 系列博文参考地址：
 http://www.spring4all.com/
+
+
 
 
 
