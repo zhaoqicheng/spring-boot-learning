@@ -76,11 +76,15 @@ https://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsin
 第八部分：
 实现邮件发送：简单邮件、附件邮件、嵌入资源的邮件、模板邮件（完成）。
 
-第九部分（暂未完成，在其他工程实现）：
+第九部分：
+分布在其他项目中：
+https://github.com/zhaoqicheng/springboot-dubbo-learning
 Spring Boot中使用Dubbo进行服务治理
 Spring Boot与Dubbo中管理服务依赖
 
-第十部分（暂未完成）：
+第十部分：
+分布在其他项目中：分布在其他项目中：
+https://github.com/zhaoqicheng/springboot-dubbo-learning
 Spring Boot中使用RabbitMQ
 
 系列博文参考地址：
