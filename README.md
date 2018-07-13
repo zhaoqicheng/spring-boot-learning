@@ -23,7 +23,7 @@ __`线程安全主要变现在以下几个方面：`__
 
 ------------
 
-__`使用JWT规范，处理用户登录信息，并按照JWT规范给用户颁发证书token（jwt）。Spring Boot中使用Spring Security进行安全控制`__
+#### 使用JWT规范，处理用户登录信息，并按照JWT规范给用户颁发证书token（jwt）。Spring Boot中使用Spring Security进行安全控制
 
 ------------
 
@@ -46,9 +46,16 @@ __`系列博文参考地址：http://www.spring4all.com/`__
 
 ------------
 
+#### 封装几个实用工具类
+__`校验码生成工具：CheckSumBuilderUtil`__
+__`json和map以及对象相互转换工具类：JsonXMLUtil`__
+__`SpringContextUtil：spring 上下文获取的工具类，可以利用该工具类实现获取spring容器中的bean`__
+__`HttpInterceptor：一般情况下，对来自浏览器的请求的拦截，是利用Filter实现的，这种方式可以实现Bean预处理、后处理。`__
+
+
 #### 其他：
-__`本项目解决跨域使用springboot的注解方式，以下有更多更有选择性的方式实现跨域:`__
- `相关资料：`
+__`本项目解决跨域使用springboot的注解方式，以下有更多更有选择性的方式实现跨域:`__   
+`相关资料：`
         `http://www.spring4all.com/article/177`    
         `这篇文章对跨域的产生和原理详细解释：http://www.ruanyifeng.com/blog/2016/04/cors.html`  
         `nginx实现跨域:https://www.cnblogs.com/gabrielchen/p/5066120.html`
