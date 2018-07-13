@@ -23,59 +23,43 @@ __`线程安全主要变现在以下几个方面：`__
 
 __`使用springboot 推荐的发送http请求的RestTemplateConfig。：`__
 
-第二部分：
-使用springboot 推荐的发送http请求的RestTemplateConfig。
+------------
 
-第三部分：
-使用JWT规范，处理用户登录信息，并按照JWT规范给用户颁发证书token（jwt）。
-Spring Boot中使用Spring Security进行安全控制
+#### 使用springboot 推荐的发送http请求的RestTemplateConfig。
 
-第四部分：
-整合redis。
-redis 的分片式储存原理，分布式储存原理（未实现）。
-知乎之分布式锁：
-https://www.zhihu.com/question/21419897
+------------
 
-第五部分：
-Spring Boot中使用@Async实现异步调用。
+__`使用JWT规范，处理用户登录信息，并按照JWT规范给用户颁发证书token（jwt）。Spring Boot中使用Spring Security进行安全控制`__
 
-第六部分：
-使用AOP统一处理Web请求日志
+------------
 
-第七部分：
-使用Spring Security
-我们在编写Web应用时，经常需要对页面做一些安全控制，比如：对于没有访问权限的用户需要转到登录表单页面。
-要实现访问控制的方法多种多样，可以通过Aop、拦截器实现，也可以通过框架实现（如：Apache Shiro、Spring Security）。
-https://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsingle/
+#### redis 的分片式储存原理，分布式储存原理（未实现）。
+__`知乎之分布式锁：https://www.zhihu.com/question/21419897`__
 
-个人看法：
-    本人没有使用Spring Security的经验，权限一般都采用自定义的filter完成，但是对于现在互联网架构前后端分离来看，
-后端对安全控制，更多不在于页面资源，或者页面资源只是其中的一部分，更重要的是对接口资源安全控制，针对这一块，采用filter和JWT规范感觉是目前比较好的解决方式。
+------------
 
-第八部分：
-实现邮件发送：简单邮件、附件邮件、嵌入资源的邮件、模板邮件（完成）。
+#### Spring Boot中使用@Async实现异步调用。
 
-第九部分：
-分布在其他项目中：
-https://github.com/zhaoqicheng/springboot-dubbo-learning
-Spring Boot中使用Dubbo进行服务治理
-Spring Boot与Dubbo中管理服务依赖
+------------
 
-第十部分：
-分布在其他项目中：分布在其他项目中：
-https://github.com/zhaoqicheng/springboot-dubbo-learning
-Spring Boot中使用RabbitMQ
+#### 使用AOP统一处理Web请求日志
 
-系列博文参考地址：
-http://www.spring4all.com/
+------------
 
-其他：
-本项目解决跨域使用springboot的注解方式，以下有更多更有选择性的方式实现跨域：
-http://www.spring4all.com/article/177
-这篇文章对跨域的产生和原理详细解释：
-http://www.ruanyifeng.com/blog/2016/04/cors.html
-nginx实现跨域：
-https://www.cnblogs.com/gabrielchen/p/5066120.html
+#### 实现邮件发送：简单邮件、附件邮件、嵌入资源的邮件、模板邮件（完成）。
+
+__`系列博文参考地址：http://www.spring4all.com/`__
+
+------------
+
+#### 其他：
+__`本项目解决跨域使用springboot的注解方式，以下有更多更有选择性的方式实现跨域：   
+http://www.spring4all.com/article/177    
+这篇文章对跨域的产生和原理详细解释：   
+http://www.ruanyifeng.com/blog/2016/04/cors.html   
+nginx实现跨域：    
+https://www.cnblogs.com/gabrielchen/p/5066120.html`__
+
 
 
 
