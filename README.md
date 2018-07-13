@@ -17,12 +17,6 @@ __`线程安全主要变现在以下几个方面：`__
 - __`d.在启动类的主类上添加`__：`@ServletComponentScan(servlet 扫描，注册发现配置的页面的servlet)`
 - __`e.另外使用Druid配置多数据源`__：`参考：https://www.bysocket.com/?p=1712`
 
-#### 使用阿里的Druid数据库连接池
-
-------------
-
-__`使用springboot 推荐的发送http请求的RestTemplateConfig。：`__
-
 ------------
 
 #### 使用springboot 推荐的发送http请求的RestTemplateConfig。
@@ -53,12 +47,11 @@ __`系列博文参考地址：http://www.spring4all.com/`__
 ------------
 
 #### 其他：
-__`本项目解决跨域使用springboot的注解方式，以下有更多更有选择性的方式实现跨域：   
-http://www.spring4all.com/article/177    
-这篇文章对跨域的产生和原理详细解释：   
-http://www.ruanyifeng.com/blog/2016/04/cors.html   
-nginx实现跨域：    
-https://www.cnblogs.com/gabrielchen/p/5066120.html`__
+__`本项目解决跨域使用springboot的注解方式，以下有更多更有选择性的方式实现跨域:`__
+ `相关资料：`
+        `http://www.spring4all.com/article/177`    
+        `这篇文章对跨域的产生和原理详细解释：http://www.ruanyifeng.com/blog/2016/04/cors.html`  
+        `nginx实现跨域:https://www.cnblogs.com/gabrielchen/p/5066120.html`
 
 
 
